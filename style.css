@@ -20,3 +20,22 @@ p{
     letter-spacing: 1px;
     line-height: 25px;
 }
+
+footer{
+    background-color: #333;
+    padding: 20px 0;
+}
+.footer_content{
+    display: flex;
+    justify-content: space-around;
+}
+.foot{
+    flex: 1;
+}
+.foot h3{
+    color: aliceblue;
+
+}
+.foot p{
+color: aliceblue;
+}
