@@ -3,10 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Modern 2026 Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .hero-gradient { background: radial-gradient(circle at top right, #f0f4ff, #ffffff); }
+    </style>
 </head>
-<body>
-    <h1>this is index page...</h1>
+<body class="bg-white text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter text-blue-600">NEXUS</div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#" class="hover:text-blue-600">Product</a>
+                <a href="#" class="hover:text-blue-600">Solutions</a>
+                <a href="#" class="hover:text-blue-600">Pricing</a>
+            </div>
+            <button class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient pt-20 pb-32 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                Build faster with <span class="text-blue-600">AI-driven</span> design.
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                The all-in-one platform for modern teams to create, collaborate, and ship products in record time.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button class="bg-black text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition">Start Building Free</button>
+                <button class="border border-gray-300 px-8 py-4 rounded-xl text-lg font-bold hover:bg-gray-50 transition">Watch Demo</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+            <div class="p-8 bg-white rounded-3xl shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 font-bold text-xl">1</div>
+                <h3 class="text-xl font-bold mb-4">Hyper-Personalized</h3>
+                <p class="text-gray-600">Our AI adapts your workspace based on your unique project needs and habits.</p>
+            </div>
+            <div class="p-8 bg-white rounded-3xl shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-6 font-bold text-xl">2</div>
+                <h3 class="text-xl font-bold mb-4">Zero Friction</h3>
+                <p class="text-gray-600">Collaborate in real-time without the "ping-pong" of endless email threads.</p>
+            </div>
+            <div class="p-8 bg-white rounded-3xl shadow-sm border border-gray-100">
+                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6 font-bold text-xl">3</div>
+                <h3 class="text-xl font-bold mb-4">Enterprise Security</h3>
+                <p class="text-gray-600">End-to-end encryption ensures your data stays exactly where it belongs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2026 Nexus Technologies Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
