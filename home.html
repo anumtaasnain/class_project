@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4D Immersive Experience</title>
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --bg: #0a0a0c;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: white;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px; /* Essential for 3D depth */
+        }
+
+        /* Animated Background Blobs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            animation: float 20s infinite alternate;
+        }
+
+        .orb-1 { width: 400px; height: 400px; background: rgba(79, 172, 254, 0.4); top: -10%; left: -10%; }
+        .orb-2 { width: 300px; height: 300px; background: rgba(0, 242, 254, 0.3); bottom: -5%; right: 10%; }
+
+        @keyframes float {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 50px) scale(1.2); }
+        }
+
+        /* 4D Glass Card */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease-out;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-text-fill-color: transparent;
+            transform: translateZ(50px); /* Lifts text off the card */
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #ccc;
+            transform: translateZ(30px);
+            margin-top: 1rem;
+        }
+
+        .btn {
+            margin-top: 2rem;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            transform: translateZ(20px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            box-shadow: 0 0 20px var(--primary);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="card" id="card">
+        <h1>DIMENSION 4</h1>
+        <p>Experience the intersection of depth and time.</p>
+        <button class="btn">Enter Reality</button>
+    </div>
+
+    <script>
+        const card = document.getElementById('card');
+        const motionRange = 20; // How much the card tilts
+
+        document.addEventListener('mousemove', (e) => {
+            let xAxis = (window.innerWidth / 2 - e.pageX) / motionRange;
+            let yAxis = (window.innerHeight / 2 - e.pageY) / motionRange;
+            
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset position when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    </script>
+</body>
+</html>
